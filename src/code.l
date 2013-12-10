@@ -605,8 +605,8 @@ static void writeMultiLineCodeLink(CodeOutputInterface &ol,
   static bool sourceTooltips = Config_getBool("SOURCE_TOOLTIPS");
   TooltipManager::instance()->addTooltip(d);
   QCString ref  = d->getReference();
-  QCString file = d->getOutputFileBase();
-  QCString anchor = d->anchor();
+  QCString file = d->getSourceFileBase();  // d->getOutputFileBase();
+  QCString anchor = d->getSourceAnchor();  // d->anchor();
   QCString tooltip; 
   if (!sourceTooltips) // fall back to simple "title" tooltips
   {
